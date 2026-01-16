@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AABID RAZA - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        .intro {
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .intro h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: typewriter 3s steps(40, end) 1s both;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid white;
+        }
+        .next-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .next-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .next-btn::after {
+            content: '→';
+            font-size: 1.5rem;
+            color: white;
+        }
+        .resume {
+            display: none;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            animation: slideIn 1s ease-in-out;
+        }
+        .resume h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease-in-out;
+        }
+        .resume .card {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-in-out;
+            animation-delay: 0.5s;
+            animation-fill-mode: both;
+        }
+        .resume .card h3 {
+            margin: 0 0 10px 0;
+            color: #ffd700;
+        }
+        .resume .card p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .back-btn {
+            display: block;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="introPage">
+        <div class="intro">
+            <h1>Hello, my name is AABID RAZA</h1>
+        </div>
+        <button class="next-btn" onclick="showResume()"></button>
+    </div>
+    
+    <div class="resume" id="resumePage">
+        <h2>My Creative Resume</h2>
+        
+        <div class="card">
+            <h3>👤 Name</h3>
+            <p>AABID RAZA</p>
+        </div>
+        
+        <div class="card">
+            <h3>🎓 Studies</h3>
+            <p>BE 1st Year in Computer Science Engineering</p>
+        </div>
+        
+        <div class="card">
+            <h3>🎂 Age</h3>
+            <p>18</p>
+        </div>
+        
+        <div class="card">
+            <h3>🏠 From</h3>
+            <p>HANGAL, Karnataka</p>
+        </div>
+        
+        <button class="back-btn" onclick="showIntro()">Back to Intro</button>
+    </div>
+
+    <script>
+        function showResume() {
+            document.getElementById('introPage').style.display = 'none';
+            document.getElementById('resumePage').style.display = 'block';
+        }
+        
+        function showIntro() {
+            document.getElementById('resumePage').style.display = 'none';
+            document.getElementById('introPage').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
